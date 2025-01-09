@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://translyrics.my.id/storage/images/translyrics-logo-circle.png" alt="TransLyrics" style="vertical-align:top;">
+    <img src="https://translyrics.my.id/storage/images/translyrics-logo-circle.png" alt="TransLyrics" style="vertical-align:top;" width="128">
 </p>
 
 # TransLyrics 🎵✨  
