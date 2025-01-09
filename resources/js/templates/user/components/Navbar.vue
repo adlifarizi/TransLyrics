@@ -8,15 +8,15 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="/" class="flex items-center">
-            <span class="text-2xl md:text-4xl font-maven font-bold text-dark">Trans</span>
-            <span class="text-2xl md:text-4xl font-maven font-bold text-blue-500">Lyrics</span>
+            <span class="text-lg md:text-2xl lg:text-4xl font-maven font-bold text-dark">Trans</span>
+            <span class="text-lg md:text-2xl lg:text-4xl font-maven font-bold text-blue-500">Lyrics</span>
           </a>
         </div>
 
         <!-- Mobile Controls (Language + Menu Button) -->
         <div class="flex items-center lg:hidden">
           <!-- Language Selector for Mobile -->
-          <div class="relative mr-4">
+          <div class="relative mr-2">
             <button @click="toggleDropdown"
               class="flex items-center w-36 pl-3 pr-10 py-1.5 border border-dark rounded-md hover:bg-gray-200 whitespace-nowrap focus:outline-none">
               <i class='bx bx-globe text-dark mr-2'></i>

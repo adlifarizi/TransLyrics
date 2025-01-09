@@ -1,7 +1,7 @@
 <template>
     <section class="relative w-full py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
 
-        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('home.newlyAdded') }}</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('home.newlyAdded') }}</h2>
 
         <div class="container">
             <!-- Loading State -->

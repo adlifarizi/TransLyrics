@@ -7,10 +7,10 @@
 
         <!-- Album Title + Artist Name -->
         <div class="flex flex-col px-2">
-            <h3 class="text-sm md:text-base lg:text-lg font-medium text-dark line-clamp-1 group-hover:underline">
+            <h3 class="text-base md:text-lg font-medium text-dark line-clamp-1 group-hover:underline">
                 {{ album.title }}
             </h3>
-            <h2 class="text-xs md:text-sm lg:text-base font-normal text-gray-500 line-clamp-1">
+            <h2 class="text-sm md:text-base font-normal text-gray-500 line-clamp-1">
                 {{ album.artist.name }}
             </h2>
         </div>

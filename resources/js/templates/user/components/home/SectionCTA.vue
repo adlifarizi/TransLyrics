@@ -1,13 +1,13 @@
 <template>
     <section class="relative w-full py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
 
-        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('home.sectionCTA') }}</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('home.sectionCTA') }}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2">
 
             <!-- Browse Songs -->
             <div
-                class="text-xs md:text-sm lg:text-base rounded-xl bg-gradient-to-b from-blue-400 to-blue-500 p-6 relative h-24 md:h-40 lg:h-48">
+                class="text-sm lg:text-base rounded-xl bg-gradient-to-b from-blue-400 to-blue-500 p-6 relative h-24 md:h-40 lg:h-48">
                 <!-- Music Icon - Top Right -->
                 <div class="absolute top-3 md:top-4 right-4 text-xl md:text-4xl lg:text-6xl text-light">
                     <i class="fa-solid fa-music"></i>
@@ -32,7 +32,7 @@
 
             <!-- Browse Albums -->
             <div
-                class="text-xs md:text-sm lg:text-base rounded-xl bg-gradient-to-b from-gray-400 to-gray-500 p-6 relative  h-24 md:h-40 lg:h-48">
+                class="text-sm lg:text-base rounded-xl bg-gradient-to-b from-gray-400 to-gray-500 p-6 relative  h-24 md:h-40 lg:h-48">
                 <!-- Music Icon - Top Right -->
                 <div class="absolute top-3 md:top-4 right-4 text-xl md:text-4xl lg:text-6xl text-light">
                     <i class="fa-solid fa-record-vinyl"></i>
@@ -57,7 +57,7 @@
 
             <!-- Browse Artists -->
             <div
-                class="text-xs md:text-sm lg:text-base rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 p-6 relative h-24 md:h-40 lg:h-48">
+                class="text-sm lg:text-base rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 p-6 relative h-24 md:h-40 lg:h-48">
                 <!-- Music Icon - Top Right -->
                 <div class="absolute top-3 md:top-4 right-4 text-xl md:text-4xl lg:text-6xl text-light">
                     <i class="fa-solid fa-users"></i>

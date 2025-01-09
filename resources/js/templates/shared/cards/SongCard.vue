@@ -13,10 +13,10 @@
 
         <!-- Song Info -->
         <div class="flex flex-col px-2 py-1">
-            <h3 class="text-sm md:text-base lg:text-lg font-medium text-dark line-clamp-2 group-hover:underline">
+            <h3 class="text-base md:text-lg font-medium text-dark line-clamp-2 group-hover:underline">
                 {{ song.title }}
             </h3>
-            <p class="text-xs md:text-sm lg:text-base font-normal text-gray-500 line-clamp-1">
+            <p class="text-sm md:text-base font-normal text-gray-500 line-clamp-1">
                 {{ song.artist.name }}
             </p>
         </div>

@@ -18,10 +18,10 @@
 
             <!-- Content Section -->
             <div class="space-y-1 p-4">
-                <h3 class="text-base md:text-lg lg:text-xl font-medium text-dark truncate w-full group-hover:underline">
+                <h3 class="text-lg md:text-xl font-medium text-dark truncate w-full group-hover:underline">
                     {{ artist.name }}
                 </h3>
-                <p class="text-xxs md:text-xs lg:text-sm text-gray-500 truncate w-full">{{ artist.translyrics_count }}
+                <p class="text-sm md:text-base text-gray-500 truncate w-full">{{ artist.translyrics_count }}
                     translyrics</p>
             </div>
         </a>

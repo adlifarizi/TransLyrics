@@ -1,6 +1,6 @@
 <template>
-    <section class="relative items-start gap-6 w-3/4 py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-        <h2 class="text-lg md:text-xl lg:text-2xl font-medium text-dark truncate mb-2">
+    <section class="relative items-start gap-6 w-full lg:w-3/4 py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
+        <h2 class="text-xl lg:text-2xl font-medium text-dark truncate mb-2">
             {{ $t('common.listenIn') }}
         </h2>
 

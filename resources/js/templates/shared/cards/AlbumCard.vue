@@ -9,10 +9,10 @@
 
         <!-- Album Info -->
         <div class="p-2 flex flex-col justify-between flex-grow">
-            <h3 class="text-sm md:text-base lg:text-lg font-medium text-dark line-clamp-2 group-hover:underline">
+            <h3 class="text-base md:text-lg font-medium text-dark line-clamp-2 group-hover:underline">
                 {{ album.title }}
             </h3>
-            <p class="text-xs md:text-sm lg:text-base font-normal text-gray-500 line-clamp-1">
+            <p class="text-sm md:text-base font-normal text-gray-500 line-clamp-1">
                 {{ (album.songs.length) + " " + $t('common.songs') }}
             </p>
         </div>

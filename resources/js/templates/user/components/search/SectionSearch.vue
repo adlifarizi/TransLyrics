@@ -1,7 +1,7 @@
 <template>
-    <div class="container py-4 px-4 md:px-6 lg:px-8 xl:px-10">
+    <div class="container py-4 px-4 md:px-6 lg:px-8 xl:px-10 w-full min-h-[50vh]">
 
-        <h1 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.searchResult') }} {{
+        <h1 class="text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.searchResult') }} {{
             query }}</h1>
 
         <!-- Search Result -->

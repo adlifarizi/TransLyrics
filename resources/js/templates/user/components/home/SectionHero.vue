@@ -22,7 +22,7 @@
                         {{ $t('home.welcome') }} Trans<span class="text-blue-500">Lyrics</span>
                     </h1>
 
-                    <div class="space-y-4 text-light text-xs md:text-sm lg:text-base">
+                    <div class="space-y-4 text-light text-sm md:text-base">
                         <p class="hidden sm:block">{{ $t('home.welcomeMessageDesktop1') }}</p>
 
                         <p class="block sm:hidden">{{ $t('home.welcomeMessageMobile1') }}</p>

@@ -1,7 +1,7 @@
 <template>
     <section class="relative items-start gap-6 w-full py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
 
-        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.albums') }}</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.albums') }}</h2>
 
         <!-- Album Card -->
         <div v-if="albums && albums.length > 0" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-2">

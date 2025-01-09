@@ -3,9 +3,9 @@
     px-4 md:px-6 lg:px-8 xl:px-10">
 
         <div class="flex justify-between items-center mt-2 mb-1">
-            <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate">{{ $t('home.featuredArtists') }}
+            <h2 class="text-xl lg:text-2xl font-bold text-dark truncate">{{ $t('home.featuredArtists') }}
             </h2>
-            <a href="/artists" class="text-xs md:text-sm lg:text-base text-blue-500 hover:underline">{{
+            <a href="/artists" class="text-sm md:text-base text-blue-500 hover:underline">{{
                 $t('home.seeAll') }}</a>
         </div>
 
@@ -29,7 +29,7 @@
             </div>
 
             <!-- Success State -->
-            <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-0">
+            <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-x-2 md:gap-x-6 gap-y-0">
                 <ArtistCard v-for="artist in artists" :key="artist.id" :artist="artist" class="w-full" />
             </div>
         </div>

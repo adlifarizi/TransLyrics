@@ -1,7 +1,7 @@
 <template>
     <div class="container py-4 px-4 md:px-6 lg:px-8 xl:px-10">
 
-        <h1 class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.albumList') }}</h1>
+        <h1 class="text-xl lg:text-2xl font-bold text-dark truncate mb-2">{{ $t('common.albumList') }}</h1>
 
         <!-- Alphabet Navigation -->
         <div class="flex flex-wrap gap-2 py-4 mb-4">

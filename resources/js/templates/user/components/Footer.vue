@@ -13,7 +13,7 @@
             <!-- Brand -->
             <div class="flex flex-row md:flex-col gap-4 items-start">
                 <!-- Brand -->
-                <div class="flex items-start">
+                <div class="flex items-center">
                     <div class="bg-white w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20 rounded-lg shadow-md">
                         <div class="aspect-square relative">
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -79,7 +79,7 @@
                                     'bg-light': !isAnonymousChecked,
                                     'border border-red-500': errorName // Tambahkan efek error
                                 }"
-                                class="px-3 py-1.5 text-dark text-sm md:text-base rounded focus:outline-none w-full" />
+                                class="px-3 py-1.5 text-dark text-base rounded focus:outline-none w-full" />
                             <p v-if="errorName" class="text-red-500 text-xs mt-1">{{ errorName }}</p>
                         </div>
 
@@ -97,7 +97,7 @@
                     <div class="mb-2">
                         <textarea id="input-comment" rows="2" v-model="inputComment"
                             :placeholder="$t('footer.commentPlaceholder')"
-                            class="resize-none px-3 py-1.5 bg-light text-dark text-sm md:text-base rounded w-full focus:outline-none"></textarea>
+                            class="resize-none px-3 py-1.5 bg-light text-dark text-base rounded w-full focus:outline-none"></textarea>
                     </div>
 
                     <!-- Button -->

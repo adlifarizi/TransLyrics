@@ -2,7 +2,7 @@
     <!-- Navbar -->
     <Navbar />
 
-    <div class="container">
+    <div class="container min-h-[50vh]">
         <!-- Loading State -->
         <div v-if="loading" class="flex justify-center items-center min-h-[200px]">
             <div class="animate-spin rounded-full h-8 w-4 md:h-8 md:w-8 lg:h-12 lg:w-12 border-b-2 border-gray"></div>
