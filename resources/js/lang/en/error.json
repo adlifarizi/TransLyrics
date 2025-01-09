@@ -1,0 +1,20 @@
+{
+    "artistNotFound": "Artist Not Found",
+    "artistNotFoundMessage": "Sorry, the artist you were looking for could not be found",
+    "artistNotAvailable": "No artist available at this time",
+    "albumNotFound": "Album Not Found",
+    "albumNotFoundMessage": "Sorry, the album you were looking for could not be found",
+    "albumNotAvailable": "No album available at this time",
+    "songNotFound": "Song Not Found",
+    "songNotFoundMessage": "Sorry, the song you were looking for could not be found",
+    "songNotAvailable": "No song available at this time",
+    "musicPlatformNotFound": "No platforms found",
+    "lyricsNotFound": "There are no lyrics available at this time",
+    "getDataError": "An error occurred while retrieving data",
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundMessage": "Sorry, the page you are looking for does not exist",
+    "searchResultNotFound": "Search not found",
+    "emptyComment": "No comments found",
+    "errorSaving": "Failed to save",
+    "errorSending": "Failed to send"
+}

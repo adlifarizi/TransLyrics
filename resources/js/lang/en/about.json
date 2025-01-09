@@ -1,0 +1,31 @@
+{
+    "aboutTranslyrics": {
+        "title": "About TransLyrics",
+        "content": "TransLyrics is a platform that combines translation and lyrics adaptation, offering a unique approach to singing songs in different languages. We focus on creating singable translations that preserve the song's melody, rhythm, and emotional essence, making it enjoyable to sing in various languages."
+    },
+    "ourMission": {
+        "title": "Our Mission",
+        "content": "Our goal is to bridge language barriers in music by providing translations that fit the song’s rhythm and melody. Whether you want to sing in Japanese, English, Indonesian, or other languages, TransLyrics ensures that the emotional impact of the song remains intact."
+    },
+    "whyTranslyrics": {
+        "title": "Why TransLyrics?",
+        "subSections": [
+            {
+                "subtitle": "Singable Translations",
+                "content": "We adapt lyrics to maintain the song's flow and melody in different languages."
+            },
+            {
+                "subtitle": "Multilingual",
+                "content": "Experience your favorite songs in multiple languages."
+            },
+            {
+                "subtitle": "Emotionally True",
+                "content": "Our translations aim to keep the original song's emotional essence."
+            }
+        ]
+    },
+    "aboutCreator": {
+        "title": "About the Creator",
+        "content": "TransLyrics was created by Adli/Kayoi."
+    }
+}

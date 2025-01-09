@@ -1,0 +1,28 @@
+{
+
+    "alreadyLogin": "Already Login as Admin",
+    "goToDashboard": "Go to Dashboard",
+    
+    "statsOverview": "Stats Overview",
+    "lastAddedArtist": "Last Added Artist",
+    "lastAddedAlbum": "Last Added Album",
+    "lastAddedSong": "Last Added Song",
+    "viewsRank": "Views Rank",
+    "latestComment": "Latest Comment",
+    "name": "Name",
+    "comment": "Comment",
+    "date": "Date",
+    "action": "Action",
+
+    "searchArtistPlaceholder": "Search by artist name",
+    "searchAlbumPlaceholder": "Search by album title",
+    "searchSongPlaceholder": "Search by song title",
+
+    "selectArtist": "Select artist",
+    "selectAlbum": "Select album (optional)",
+    "noAlbum": "*No album for this song",
+
+    "confirmDelete": "Confirm Delete",
+    "confirmDeleteMessage": "Are you sure want to delete?",
+    "delete": "Delete"
+}

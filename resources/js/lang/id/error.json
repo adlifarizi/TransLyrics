@@ -1,0 +1,20 @@
+{
+    "artistNotFound": "Artis Tidak Ditemukan",
+    "artistNotFoundMessage": "Maaf, artis yang anda cari tidak dapat ditemukan",
+    "artistNotAvailable": "Tidak ada artis yang tersedia saat ini",
+    "albumNotFound": "Album Tidak Ditemukan",
+    "albumNotFoundMessage": "Maaf, album yang anda cari tidak dapat ditemukan",
+    "albumNotAvailable": "Tidak ada album yang tersedia saat ini",
+    "songNotFound": "Lagu Tidak Ditemukan",
+    "songNotFoundMessage": "Maaf, lagu yang anda cari tidak dapat ditemukan",
+    "songNotAvailable": "Tidak ada lagu yang tersedia saat ini",
+    "musicPlatformNotFound": "Tidak ada platform yang ditemukan",
+    "lyricsNotFound": "Tidak ada lirik yang tersedia saat ini",
+    "getDataError": "Terjadi kesalahan saat mengambil data",
+    "pageNotFound": "Halaman Tidak Ditemukan",
+    "pageNotFoundMessage": "Maaf, halaman yang anda cari tidak ada",
+    "searchResultNotFound": "Pencarian tidak ditemukan",
+    "emptyComment": "Tidak ada komentar yang ditemukan",
+    "errorSaving": "Gagal menyimpan",
+    "errorSending": "Gagal mengirim"
+}

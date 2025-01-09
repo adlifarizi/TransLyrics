@@ -1,0 +1,21 @@
+{
+    "welcome": "Welcome to",
+    "welcomeMessageDesktop1": "TransLyrics combines translation and lyrics, offering a unique approach to adapting songs across languages. Unlike direct translations, it creates singable lyrics that preserve the song's melody, rhythm, and emotional essence.",
+    "welcomeMessageMobile1": "TransLyrics combines translation and lyrics, creating singable versions that preserve the song's melody, rhythm, and emotion.",
+    "welcomeMessageDesktop2": "TransLyrics may have translations that differ from the original lyrics, but it preserves the song's essence, making it enjoyable to sing in multiple languages. Experience music in a new way, whether in Japanese, English, Indonesia, or any other language.",
+    "welcomeMessageMobile2": "TransLyrics may have different translations from original, but it preserves the song's essence, making it fun to sing in multiple languages. Experience music in a new way, whether in Japanese, English, Indonesian, or others.",
+
+    "featuredArtists": "Featured Artists",
+    "seeAll": "See all >",
+
+    "newlyAdded": "Newly Added",
+    
+    "sectionCTA": "Looking for More?",
+    "CTASongsMessage": "Discover lyrics across different languages.",
+    "CTABrowseSongs": "Browse Songs",
+    "CTAAlbumsMessage": "Explore albums and enjoy new music.",
+    "CTABrowseAlbums": "Browse Albums",
+    "CTAArtistsMessage": "Discover your favorite artists to find hidden gems",
+    "CTABrowseArtists": "Browse Artists"
+        
+}

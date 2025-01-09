@@ -1,0 +1,27 @@
+{
+    "alreadyLogin": "Sudah Login sebagai Admin",
+    "goToDashboard": "Lanjut ke Dashboard",
+
+    "statsOverview": "Ringkasan Statistik",
+    "lastAddedArtist": "Artis Terakhir Ditambahkan",
+    "lastAddedAlbum": "Album Terakhir Ditambahkan",
+    "lastAddedSong": "Lagu Terakhir Ditambahkan",
+    "viewsRank": "Views Rank",
+    "latestComment": "Komentar Terbaru",
+    "name": "Nama",
+    "comment": "Komentar",
+    "date": "Tanggal",
+    "action": "Aksi",
+
+    "searchArtistPlaceholder": "Cari berdasarkan nama artis",
+    "searchAlbumPlaceholder": "Cari berdasarkan judul album",
+    "searchSongPlaceholder": "Cari berdasarkan judul lagu",
+
+    "selectArtist": "Pilih artis",
+    "selectAlbum": "Pilih album (opsional)",
+    "noAlbum": "*Tidak ada album untuk lagu ini",
+
+    "confirmDelete": "Konfirmasi Penghapusan",
+    "confirmDeleteMessage": "Apakah anda yakin ingin menghapus?",
+    "delete": "Hapus"
+}

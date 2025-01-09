@@ -1,0 +1,49 @@
+{
+    "artist": "Artist",
+    "album": "Album",
+    "song": "Song",
+
+    "artists": "Artists",
+    "albums": "Albums",
+    "songs": "Songs",
+
+    "artistList": "Artist List",
+    "albumList": "Album List",
+    "songList": "Song List",
+    "commentList": "Comment List",
+
+    "image": "Image",
+    "name": "Name",
+    "title": "Title",
+    "debutYear": "Debut Year",
+    "views": "Views",
+
+    "searchPlaceholder": "search songs, albums, or artists",
+    "searchResult": "Search result for: ",
+
+    "availableTranslyrics": "Available translyrics",
+    "originalTitle": "Original Title",
+    "alternateTitle": "Alternate Title",
+    "debut": "Debut",
+    "released": "Released",
+    "vocal": "Vocal",
+    "music": "Music",
+    "lyricist": "Lyricist",
+    "composer": "Composer",
+    "arrangement": "Arrangement",
+
+    "lyrics": "Lyrics",
+    "listenIn": "Listen in",
+
+    "Original": "Original",
+    "Romanized": "Romanized",
+    "Translyrics": "Translyrics",
+    "Side by Side": "Side by Side",
+
+    "save": "Save",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "successSaving": "Success Saving",
+    "sending": "Sending...",
+    "successSendingComment": "Success send comment"
+}

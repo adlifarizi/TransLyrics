@@ -1,0 +1,31 @@
+{
+    "aboutTranslyrics": {
+        "title": "Tentang TransLyrics",
+        "content": "TransLyrics adalah platform yang menggabungkan terjemahan dan adaptasi lirik, menawarkan pendekatan unik untuk menyanyikan lagu dalam berbagai bahasa. Kami fokus pada pembuatan terjemahan yang dapat dinyanyikan yang mempertahankan melodi, ritme, dan esensi emosional lagu, menjadikannya menyenangkan untuk dinyanyikan dalam berbagai bahasa."
+    },
+    "ourMission": {
+        "title": "Misi Kami",
+        "content": "Tujuan kami adalah menjembatani hambatan bahasa dalam musik dengan menyediakan terjemahan yang sesuai dengan ritme dan melodi lagu. Baik Anda ingin menyanyi dalam bahasa Jepang, Inggris, Indonesia, atau bahasa lainnya, TransLyrics memastikan dampak emosional lagu tetap terjaga."
+    },
+    "whyTranslyrics": {
+        "title": "Mengapa TransLyrics?",
+        "subSections": [
+            {
+                "subtitle": "Terjemahan yang Dapat Dinyanyikan",
+                "content": "Kami menyesuaikan lirik untuk mempertahankan alur dan melodi lagu dalam berbagai bahasa."
+            },
+            {
+                "subtitle": "Multibahasa",
+                "content": "Nikmati lagu favorit Anda dalam berbagai bahasa."
+            },
+            {
+                "subtitle": "Emosional yang Tepat",
+                "content": "Terjemahan kami bertujuan untuk mempertahankan esensi emosional lagu yang asli."
+            }
+        ]
+    },
+    "aboutCreator": {
+        "title": "Tentang Pembuat",
+        "content": "TransLyrics dibuat oleh Adli/Kayoi."
+    }
+}

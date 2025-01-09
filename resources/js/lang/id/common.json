@@ -1,0 +1,49 @@
+{
+    "artist": "Artis",
+    "album": "Album",
+    "song": "Lagu",
+
+    "artists": "Artis",
+    "albums": "Album",
+    "songs": "Lagu",
+
+    "artistList": "Daftar Artis",
+    "albumList": "Daftar Album",
+    "songList": "Daftar Lagu",
+    "commentList": "Daftar Komentar",
+
+    "image": "Gambar",
+    "name": "Nama",
+    "title": "Judul",
+    "debutYear": "Tahun Debut",
+    "views": "Views",
+
+    "searchPlaceholder": "cari lagu, album, atau artis",
+    "searchResult": "Hasil pencarian untuk: ",
+
+    "availableTranslyrics": "Translyrics tersedia",
+    "originalTitle": "Judul Original",
+    "alternateTitle": "Judul Alternatif",
+    "debut": "Debut",
+    "released": "Rilis",
+    "vocal": "Vokal",
+    "music": "Musik",
+    "lyricist": "Lirik",
+    "composer": "Komposer",
+    "arrangement": "Aransemen",
+
+    "lyrics": "Lirik",
+    "listenIn": "Dengarkan di",
+
+    "Original": "Original",
+    "Romanized": "Romaji",
+    "Translyrics": "Translyrics",
+    "Side by Side": "Side by Side",
+
+    "save": "Simpan",
+    "cancel": "Batal",
+    "saving": "Menyimpan...",
+    "successSaving": "Berhasil Menyimpan",
+    "sending": "Mengirim...",
+    "successSendingComment": "Sukses mengirim komentar"
+}
