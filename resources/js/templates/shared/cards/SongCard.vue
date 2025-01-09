@@ -26,11 +26,8 @@
 <script setup>
 import { computed } from 'vue';
 
-// Define `baseUrl` as a reactive property
-const baseUrl = import.meta.env.VITE_BASE_URL;
-
 // Define props
-defineProps({
+const props = defineProps({
     song: {
         type: Object,
         required: true,
@@ -38,11 +35,15 @@ defineProps({
     },
 });
 
+// Define `baseUrl` as a reactive property
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
 // Computed property to check if the song has translyrics
 const hasTranslyrics = computed(() => {
+    // Make sure song exists before accessing its properties
     return (
-        song.lyrics &&
-        song.lyrics.some((lyric) => lyric.type === 'translyrics')
+        props.song?.lyrics &&
+        props.song.lyrics.some((lyric) => lyric.type === 'translyrics')
     );
 });
 </script>
