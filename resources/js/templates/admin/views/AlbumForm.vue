@@ -5,6 +5,13 @@
         <!-- Top Bar -->
         <Header />
 
+        <!-- Notification -->
+        <div v-if="showNotification" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-light text-center px-10 py-6 rounded-lg shadow-lg">
+                <p class="text-lg font-semibold text-dark">{{ notificationMessage }}</p>
+            </div>
+        </div>
+
         <!-- Main -->
         <div class="w-full min-h-[60svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
             <div class="flex gap-6">
@@ -30,6 +37,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div v-if="errorMessage">
+                        <p class="block text-red-500 my-2">{{ errorMessage }}</p>
                     </div>
                 </div>
 
@@ -57,7 +67,7 @@
                         <div class="mb-4">
                             <label for="original_title" class="block font-medium text-dark mb-1">{{
                                 $t('common.originalTitle')
-                            }}</label>
+                                }}</label>
                             <input v-model="form.original_title" id="original_title" type="text"
                                 :placeholder="`${$t('common.title')}`"
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
@@ -65,7 +75,7 @@
                         <div class="mb-4">
                             <label for="alternate_title" class="block font-medium text-dark mb-1">{{
                                 $t('common.alternateTitle')
-                            }}</label>
+                                }}</label>
                             <input v-model="form.alternate_title" id="alternate_title" type="text"
                                 :placeholder="`${$t('common.alternateTitle')}`"
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
@@ -77,7 +87,7 @@
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
                         </div>
                         <div class="flex flex-row gap-4">
-                            <button @click="$router.push({ name: 'ManageAlbum' })"
+                            <button type="button" @click="$router.push({ name: 'ManageAlbum' })"
                                 class="bg-red-500 w-24 text-light px-4 py-2 rounded">
                                 {{ $t('common.cancel') }}
                             </button>
@@ -101,6 +111,9 @@
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import { useRoute, useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n'; // Import useI18n
+
+const { t } = useI18n(); // Mengambil fungsi t untuk terjemahan
 
 // Refs untuk menyimpan data reaktif
 const form = ref({
@@ -118,6 +131,10 @@ const artists = ref([]);
 // Mengambil instance dari router dan route
 const route = useRoute();
 const router = useRouter();
+
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const errorMessage = ref('');
 
 // Computed untuk mendapatkan albumId dari route params
 const albumId = computed(() => route.params.id);
@@ -150,7 +167,7 @@ const fetchArtistsList = async () => {
             artists.value = response.data.data; // Sesuaikan key jika berbeda
         }
     } catch (error) {
-        console.error(error);
+        errorMessage.value = error
     }
 };
 
@@ -179,7 +196,7 @@ const fetchAlbum = async () => {
             previewImage.value = response.data.data.image; // Sesuaikan key image
         }
     } catch (error) {
-        
+        errorMessage.value = error
     }
 };
 
@@ -197,6 +214,9 @@ const triggerFileInput = () => {
 
 // Fungsi untuk handle submit form
 const handleSubmit = async () => {
+    // Reset error message
+    errorMessage.value = '';
+
     const formData = new FormData();
     Object.keys(form.value).forEach((key) => {
         if (form.value[key] !== '' && form.value[key] !== null && form.value[key] !== undefined) {
@@ -215,6 +235,8 @@ const handleSubmit = async () => {
             return;
         }
 
+        showNotificationResult(t('common.saving'));
+
         const response = isEdit.value
             ? await axios.post(`/api/admin/albums/${albumId.value}`, formData, {
                 headers: {
@@ -228,10 +250,21 @@ const handleSubmit = async () => {
             });
 
         if (response.data.success) {
+            showNotificationResult(t('common.successSaving'));
+
             router.push('/admin/albums'); // Kembali ke halaman album
         }
     } catch (error) {
-        
+        errorMessage.value = error
+        showNotificationResult(t('error.errorSaving'));
     }
+};
+
+const showNotificationResult = (message) => {
+    notificationMessage.value = message;
+    showNotification.value = true;
+    setTimeout(() => {
+        showNotification.value = false;
+    }, 2000);
 };
 </script>

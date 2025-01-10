@@ -5,6 +5,13 @@
         <!-- Top Bar -->
         <Header />
 
+        <!-- Notification -->
+        <div v-if="showNotification" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-light text-center px-10 py-6 rounded-lg shadow-lg">
+                <p class="text-lg font-semibold text-dark">{{ notificationMessage }}</p>
+            </div>
+        </div>
+
         <!-- Main -->
         <div class="w-full min-h-[60svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
             <div class="flex gap-6">
@@ -30,6 +37,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div v-if="errorMessage">
+                        <p class="block text-red-500 my-2">{{ errorMessage }}</p>
                     </div>
                 </div>
 
@@ -69,7 +79,7 @@
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
                         </div>
                         <div class="flex flex-row gap-4">
-                            <button @click="$router.push({ name: 'ManageArtist' })"
+                            <button type="button" @click="$router.push({ name: 'ManageArtist' })"
                                 class="bg-red-500 w-24 text-light px-4 py-2 rounded">
                                 {{ $t('common.cancel') }}
                             </button>
@@ -93,6 +103,9 @@
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import { useRoute, useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n'; // Import useI18n
+
+const { t } = useI18n(); // Mengambil fungsi t untuk terjemahan
 
 // Refs untuk menyimpan data reaktif
 const form = ref({
@@ -110,6 +123,10 @@ const isEdit = ref(false);
 // Mengambil instance dari router dan route
 const route = useRoute();
 const router = useRouter();
+
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const errorMessage = ref('');
 
 // Computed untuk mendapatkan artistId dari route params
 const artistId = computed(() => route.params.id);
@@ -148,7 +165,7 @@ const fetchArtist = async () => {
             previewImage.value = response.data.data.image; // Sesuaikan key image
         }
     } catch (error) {
-        console.error(error);
+        errorMessage.value = error
     }
 };
 
@@ -166,6 +183,9 @@ const triggerFileInput = () => {
 
 // Fungsi untuk handle submit form
 const handleSubmit = async () => {
+    // Reset error message
+    errorMessage.value = '';
+
     const formData = new FormData();
     Object.keys(form.value).forEach((key) => {
         if (form.value[key] !== '' && form.value[key] !== null && form.value[key] !== undefined) {
@@ -184,6 +204,8 @@ const handleSubmit = async () => {
             return;
         }
 
+        showNotificationResult(t('common.saving'));
+
         const response = isEdit.value
             ? await axios.post(`/api/admin/artists/${artistId.value}`, formData, {
                 headers: {
@@ -197,10 +219,21 @@ const handleSubmit = async () => {
             });
 
         if (response.data.success) {
+            showNotificationResult(t('common.successSaving'));
+
             router.push('/admin/artists'); // Kembali ke halaman artist
         }
     } catch (error) {
-        
+        errorMessage.value = error
+        showNotificationResult(t('error.errorSaving'));
     }
+};
+
+const showNotificationResult = (message) => {
+    notificationMessage.value = message;
+    showNotification.value = true;
+    setTimeout(() => {
+        showNotification.value = false;
+    }, 2000);
 };
 </script>

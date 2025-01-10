@@ -5,6 +5,13 @@
         <!-- Top Bar -->
         <Header />
 
+        <!-- Notification -->
+        <div v-if="showNotification" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-light text-center px-10 py-6 rounded-lg shadow-lg">
+                <p class="text-lg font-semibold text-dark">{{ notificationMessage }}</p>
+            </div>
+        </div>
+
         <!-- Main -->
         <div class="w-full min-h-[60svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
             <div class="flex gap-6">
@@ -30,6 +37,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div v-if="errorMessage">
+                        <p class="block text-red-500 my-2">{{ errorMessage }}</p>
                     </div>
                 </div>
 
@@ -70,7 +80,7 @@
                         <div class="mb-4">
                             <label for="original_title" class="block font-medium text-dark mb-1">{{
                                 $t('common.originalTitle')
-                            }}</label>
+                                }}</label>
                             <input v-model="form.original_title" id="original_title" type="text"
                                 :placeholder="`${$t('common.title')}`"
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
@@ -79,7 +89,7 @@
                         <div class="mb-4">
                             <label for="alternate_title" class="block font-medium text-dark mb-1">{{
                                 $t('common.alternateTitle')
-                            }}</label>
+                                }}</label>
                             <input v-model="form.alternate_title" id="alternate_title" type="text"
                                 :placeholder="`${$t('common.alternateTitle')}`"
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
@@ -125,7 +135,7 @@
                         <div class="mb-4">
                             <label for="arrangement" class="block font-medium text-dark mb-1">{{
                                 $t('common.arrangement')
-                            }}</label>
+                                }}</label>
                             <input v-model="form.arrangement" id="arrangement" type="text"
                                 :placeholder="`${$t('common.arrangement')}`"
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
@@ -156,12 +166,12 @@
                         <div class="mb-4">
                             <label for="link_apple_music" class="block font-medium text-dark mb-1">Apple Music</label>
                             <input v-model="form.link_apple_music" id="link_apple_music" type="text"
-                                placeholder="https://music.apple.com/id/song/..."
+                                placeholder="https://music.apple.com/song/..."
                                 class="px-3 py-1.5 w-full border border-dark bg-light text-dark text-sm md:text-base rounded focus:ring-blue-500 focus:border-blue-500" />
                         </div>
 
                         <div class="flex flex-row gap-4">
-                            <button @click="$router.push({ name: 'ManageSong' })"
+                            <button type="button" @click="$router.push({ name: 'ManageSong' })"
                                 class="bg-red-500 w-24 text-light px-4 py-2 rounded">
                                 {{ $t('common.cancel') }}
                             </button>
@@ -184,10 +194,13 @@
 <script setup>
 import { ref, reactive, computed, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n'; // Import useI18n
 import axios from 'axios';
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+
+const { t } = useI18n(); // Mengambil fungsi t untuk terjemahan
 
 // Router and route
 const router = useRouter();
@@ -217,6 +230,10 @@ const isEdit = ref(false);
 const artists = ref([]);
 const albums = ref([]);
 
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const errorMessage = ref('');
+
 // Computed properties
 const songId = computed(() => route.params.id);
 
@@ -237,7 +254,7 @@ const fetchArtistsList = async () => {
             artists.value = response.data.data; // Adjust key if necessary
         }
     } catch (error) {
-        console.error(error);
+        errorMessage.value = error
     }
 };
 
@@ -258,7 +275,7 @@ const fetchAlbumsList = async (artistId) => {
             albums.value = response.data.data; // Adjust key if necessary
         }
     } catch (error) {
-        
+        errorMessage.value = error
     }
 };
 
@@ -300,7 +317,7 @@ const fetchSong = async () => {
             }
         }
     } catch (error) {
-        
+        errorMessage.value = error
     }
 };
 
@@ -318,6 +335,9 @@ const triggerFileInput = () => {
 
 // Handle form submission
 const handleSubmit = async () => {
+    // Reset error message
+    errorMessage.value = '';
+
     const formData = new FormData();
     Object.keys(form).forEach((key) => {
         if (form[key] !== '' && form[key] !== null && form[key] !== undefined) {
@@ -336,6 +356,8 @@ const handleSubmit = async () => {
             return;
         }
 
+        showNotificationResult(t('common.saving'));
+
         const response = isEdit.value
             ? await axios.post(`/api/admin/songs/${songId.value}`, formData, {
                 headers: { Authorization: `Bearer ${token}` },
@@ -345,11 +367,22 @@ const handleSubmit = async () => {
             });
 
         if (response.data.success) {
+            showNotificationResult(t('common.successSaving'));
+
             router.push('/admin/songs');
         }
     } catch (error) {
-        
+        errorMessage.value = error
+        showNotificationResult(t('error.errorSaving'));
     }
+};
+
+const showNotificationResult = (message) => {
+    notificationMessage.value = message;
+    showNotification.value = true;
+    setTimeout(() => {
+        showNotification.value = false;
+    }, 2000);
 };
 
 // Watch for artist ID changes

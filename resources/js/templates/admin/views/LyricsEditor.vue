@@ -63,7 +63,7 @@ const fetchData = async () => {
         loading.value = true;
         error.value = null;
 
-        const songPromise = axios.get(`/api/songs?id=${songId.value}`);
+        const songPromise = axios.get(`/api/admin/songs?id=${songId.value}`);
 
         // Menunggu semua API selesai
         const [songResponse] = await Promise.all([songPromise]);
