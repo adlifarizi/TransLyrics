@@ -1,7 +1,7 @@
 <template>
     <div class="w-full min-h-[80svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
         <!-- Title -->
-        <div class="flex justify-between items-center mt-2 mb-1">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 mb-1">
             <p class="text-lg md:text-xl lg:text-2xl font-bold text-dark truncate mb-4">{{ $t('common.songList') }}
             </p>
             <div class="flex items-center gap-2">

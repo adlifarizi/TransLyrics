@@ -14,7 +14,7 @@
 
         <!-- Main -->
         <div class="w-full min-h-[60svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-            <div class="flex gap-6">
+            <div class="flex flex-col md:flex-row gap-6">
                 <!-- Upload Image Section -->
                 <div>
                     <label class="block font-medium text-dark mb-1">{{ $t('common.image') }}</label>
@@ -196,6 +196,7 @@ import { ref, reactive, computed, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n'; // Import useI18n
 import axios from 'axios';
+
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';

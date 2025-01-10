@@ -14,7 +14,7 @@
 
         <!-- Main -->
         <div class="w-full min-h-[60svh] py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-            <div class="flex gap-6">
+            <div class="flex flex-col md:flex-row gap-6">
                 <!-- Upload Image Section -->
                 <div>
                     <label class="block font-medium text-dark mb-1">{{ $t('common.image') }}</label>
@@ -104,6 +104,10 @@ import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n'; // Import useI18n
+
+import Sidebar from '../components/Sidebar.vue';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
 const { t } = useI18n(); // Mengambil fungsi t untuk terjemahan
 

@@ -7,6 +7,10 @@
             </div>
         </div>
 
+        <div v-if="errorMessage">
+            <p class="block text-red-500 my-2">{{ errorMessage }}</p>
+        </div>
+
         <!-- Two Editors Side by Side -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Left Editor -->
@@ -88,6 +92,8 @@ const lyricsIds = ref({
 });
 const showNotification = ref(false);
 const notificationMessage = ref('');
+const errorMessage = ref('');
+
 const router = useRouter();
 
 const fetchLyrics = async (songId) => {
@@ -106,6 +112,7 @@ const fetchLyrics = async (songId) => {
             });
         }
     } catch (error) {
+        errorMessage.value = error;
         showNotificationResult(t('error.lyricsNotFound'));
     }
 };
@@ -115,13 +122,21 @@ const showNotificationResult = (message) => {
     showNotification.value = true;
     setTimeout(() => {
         showNotification.value = false;
-        router.push('/admin/songs');
     }, 2000);
 };
 
 const saveLyrics = async () => {
     try {
+        // Reset error message
+        errorMessage.value = '';
+
         const savePromises = [];
+
+        const token = localStorage.getItem('token');
+        if (!token) {
+            router.push('/login');
+            return;
+        }
 
         Object.entries(lyrics.value).forEach(([type, content]) => {
             if (!content) return;
@@ -136,10 +151,20 @@ const saveLyrics = async () => {
 
             if (lyricsIds.value[type]) {
                 savePromises.push(
-                    axios.put(`/api/lyrics/${lyricsIds.value[type]}`, payload)
+                    axios.put(`/api/admin/lyrics/${lyricsIds.value[type]}`, payload, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    })
                 );
             } else {
-                savePromises.push(axios.post('/api/lyrics', payload));
+                savePromises.push(
+                    axios.post('/api/admin/lyrics', payload, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    })
+                );
             }
         });
 
@@ -156,7 +181,10 @@ const saveLyrics = async () => {
         });
 
         showNotificationResult(t('common.successSaving'));
+
+        router.push('/admin/songs');
     } catch (error) {
+        errorMessage.value = error;
         showNotificationResult(t('error.errorSaving'));
     }
 };

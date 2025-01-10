@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AdminAlbumController;
 use App\Http\Controllers\Api\AdminArtistController;
 use App\Http\Controllers\Api\AdminCommentController;
+use App\Http\Controllers\Api\AdminLyricsController;
 use App\Http\Controllers\Api\AdminSongController;
 use App\Http\Controllers\Api\AlbumController;
 use App\Http\Controllers\Api\ArtistController;
@@ -51,6 +52,12 @@ Route::prefix('/admin/songs')->group(function () {
     Route::delete('/{id}', [AdminSongController::class, 'destroy'])->middleware('auth:sanctum');
 });
 
+Route::prefix('/admin/lyrics')->group(callback: function () {
+    Route::post('/', [AdminLyricsController::class, 'store'])->middleware('auth:sanctum');
+    Route::put('/{id}', [AdminLyricsController::class, 'update'])->middleware('auth:sanctum');
+    Route::delete('/{id}', [AdminLyricsController::class, 'destroy'])->middleware('auth:sanctum');
+});
+
 Route::prefix('/admin/comments')->group(function () {
     Route::get('/', [AdminCommentController::class, 'index'])->middleware('auth:sanctum');
     Route::delete('/{id}', [AdminCommentController::class, 'destroy'])->middleware('auth:sanctum');
@@ -76,9 +83,6 @@ Route::prefix('songs')->group(function () {
 
 Route::prefix('lyrics')->group(callback: function () {
     Route::get('/', [LyricsController::class, 'index']); // Mengambil semua lirik
-    Route::post('/', [LyricsController::class, 'store']); // Menambah lirik baru
-    Route::put('/{id}', [LyricsController::class, 'update']); // Mengupdate lirik
-    Route::delete('/{id}', [LyricsController::class, 'destroy']); // Menghapus lirik
 });
 
 Route::prefix('comments')->group(callback: function () {
