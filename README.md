@@ -1,4 +1,6 @@
-![TransLyrics](./public/storage/images/translyrics-logo-circle.png)
+<p align="center">
+    <img src="https://translyrics.my.id/storage/images/translyrics-logo-circle.png" alt="TransLyrics" style="vertical-align:top;" width="128">
+</p>
 
 # TransLyrics 🎵✨  
 **TransLyrics** is a platform for displaying song lyrics along with their translations. The translations on TransLyrics are designed to follow the rhythm or melody of the original song, so they can be sung just like the original.
