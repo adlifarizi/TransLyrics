@@ -1,7 +1,7 @@
 <template>
     <section class="w-fit py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
         <!-- Song Image and Info Container -->
-        <div class="flex flex-row items-start gap-4 w-full">
+        <div class="flex flex-col md:flex-row items-start gap-4 w-full">
             <!-- Album Image -->
             <div class="flex-shrink-0">
                 <img :src="song.image ? `${song.image}` : 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg'"

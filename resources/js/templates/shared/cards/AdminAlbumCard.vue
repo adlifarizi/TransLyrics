@@ -1,5 +1,5 @@
 <template>
-    <a :href="`/albums/${album.id}`"
+    <a :href="`/albums/${album.id}/${album.slug}`"
         class="group flex bg-white rounded shadow-sm w-full overflow-hidden cursor-pointer relative">
 
         <!-- Cover Image -->

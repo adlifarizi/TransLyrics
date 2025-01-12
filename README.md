@@ -4,6 +4,7 @@
 
 # TransLyrics 🎵✨  
 **TransLyrics** is a platform for displaying song lyrics along with their translations. The translations on TransLyrics are designed to follow the rhythm or melody of the original song, so they can be sung just like the original.
+You can visit the website at <a href="https://translyrics.my.id" target="_blank" >translyrics.my.id</a>
 
 ## Key Features 🚀  
 - **Artist List:** Explore various artists and discover their works. 

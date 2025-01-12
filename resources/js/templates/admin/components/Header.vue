@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light px-6 py-4 flex justify-between">
+  <div class="bg-light px-4 py-4 flex justify-between">
     <!-- Brand -->
     <a href="/dashboard" class="text-lg md:text-xl lg:text-2xl font-maven font-bold text-dark">
       Trans<span class="text-blue-500">Lyrics</span>
@@ -8,7 +8,7 @@
     <!-- Language Selector -->
     <div class="relative">
       <button @click="toggleDropdown"
-        class="flex items-center w-40 pl-3 pr-10 py-1.5 border border-dark rounded-md hover:bg-gray-200 whitespace-nowrap focus:outline-none">
+        class="flex items-center w-36 md:w-40 pl-3 pr-10 py-1.5 border border-dark rounded-md hover:bg-gray-200 whitespace-nowrap focus:outline-none">
         <i class='bx bx-globe text-dark mr-2'></i>
         <span class="text-sm xl:text-base text-dark truncate">{{ selectedLanguage }}</span>
         <div class="absolute inset-y-0 right-0 flex items-center pr-3">
