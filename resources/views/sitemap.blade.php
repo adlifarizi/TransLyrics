@@ -1,14 +1,11 @@
 @php echo '<'.'?'.'xml version="1.0" encoding="UTF-8"?>'."\n"; @endphp
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Home Page -->
     <url>
         <loc>{{ config('app.url') }}</loc>
         <lastmod>{{ Carbon\Carbon::now()->toIso8601String() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- List Pages -->
     <url>
         <loc>{{ config('app.url') }}/artists</loc>
         <lastmod>{{ Carbon\Carbon::now()->toIso8601String() }}</lastmod>
@@ -27,8 +24,6 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Artists -->
     @foreach ($artists as $artist)
     <url>
         <loc>{{ config('app.url') }}/artists/{{ $artist->id }}/{{ $artist->slug }}</loc>
@@ -37,8 +32,6 @@
         <priority>0.7</priority>
     </url>
     @endforeach
-
-    <!-- Albums -->
     @foreach ($albums as $album)
     <url>
         <loc>{{ config('app.url') }}/albums/{{ $album->id }}/{{ $album->slug }}</loc>
@@ -47,8 +40,6 @@
         <priority>0.7</priority>
     </url>
     @endforeach
-
-    <!-- Songs -->
     @foreach ($songs as $song)
     <url>
         <loc>{{ config('app.url') }}/songs/{{ $song->id }}/{{ $song->slug }}</loc>

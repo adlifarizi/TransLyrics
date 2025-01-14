@@ -19,6 +19,6 @@ class SitemapController extends Controller
             'artists' => $artists,
             'albums' => $albums,
             'songs' => $songs,
-        ])->header('Content-Type', 'text/xml');
+        ])->header('Content-Type', 'application/xml');
     }
 }
