@@ -4,9 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   site: { 
-    url: 'https://example.com', 
+    url: 'https://translyrics.my.id', 
     name: 'TransLyrics' 
-    },
+  },
 
   runtimeConfig: {
     public: {
