@@ -4,6 +4,28 @@ import SongSearchCard from "@/components/cards/song-search";
 import AlphabetNavigation from "@/components/search/alphabet-navigation";
 import { Suspense } from "react";
 
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_SITE_URL;
+const siteName = process.env.NEXT_SITE_NAME
+
+export const metadata: Metadata = {
+    title: 'Songs - TransLyrics',
+    description: 'Explore all the songs featured on TransLyrics, with lyrics translations in English, Romaji, and Indonesian.',
+    openGraph: {
+        title: 'Songs - TransLyrics',
+        description: 'Find all the songs from various artists on TransLyrics, including lyrics and translations into English, Romaji, and Indonesian.',
+        url: `${siteUrl}/songs`,
+        siteName: `${siteName}`
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Songs - TransLyrics',
+        description: 'Discover all the songs on TransLyrics, with lyrics and translations in multiple languages.',
+    },
+    metadataBase: new URL(`${siteUrl}/songs`)
+};
+
 async function SongList() {
     const backendApiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");

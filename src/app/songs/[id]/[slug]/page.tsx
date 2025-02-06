@@ -7,6 +7,41 @@ import SongPlatform from "@/components/song/song-platform";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_SITE_URL;
+const siteName = process.env.NEXT_SITE_NAME
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+    const { id } = await params;
+
+    const song = await fetchSong(id);
+
+    return {
+        title: `${song.title} by ${song.artist.name} - Lyrics & Translations | TransLyrics`,
+        description: `Explore the song "${song.title}" by ${song.artist.name}${song.album?.title ? ` from the album "${song.album.title}"` : ''}. Find lyrics with translations to English, Romaji, and Indonesian.`,
+        openGraph: {
+            title: `${song.title} by ${song.artist.name} - Lyrics & Translations | TransLyrics`,
+            description: `Find information about the song "${song.title}" by ${song.artist.name}${song.album?.title ? ` from the album "${song.album.title}"` : ''}, including lyrics and translations into English, Romaji, and Indonesian.`,
+            url: `${siteUrl}/songs/${song.id}/${song.slug}`,
+            images: song.image ? `${backendUrl}${song.image}` : 'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg',
+            siteName: `${siteName}`
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${song.title} by ${song.artist.name} - Lyrics & Translations | TransLyrics`,
+            description: `Discover the song "${song.title}" by ${song.artist.name}${song.album?.title ? ` from the album "${song.album.title}"` : ''}, featuring lyrics and translations in multiple languages. Explore now!`,
+            images: song.image ? `${backendUrl}${song.image}` : 'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg',
+        },
+        metadataBase: new URL(`${siteUrl}/songs/${song.id}/${song.slug}`)
+    }
+}
+
 const backendApiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
 async function fetchSong(id: string) {

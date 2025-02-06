@@ -4,6 +4,28 @@ import ArtistSearchCard from "@/components/cards/artist-search";
 import AlphabetNavigation from "@/components/search/alphabet-navigation";
 import { Suspense } from "react";
 
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_SITE_URL;
+const siteName = process.env.NEXT_SITE_NAME
+
+export const metadata: Metadata = {
+    title: 'Artists - TransLyrics',
+    description: 'Discover all the Japanese artists featured on TransLyrics, along with their songs and lyrics translations in English, Romaji, and Indonesian.',
+    openGraph: {
+        title: 'Artists - TransLyrics',
+        description: 'Explore all the artists on TransLyrics, featuring their songs and lyrics translations into English, Romaji, and Indonesian.',
+        url: `${siteUrl}/atists`,
+        siteName: `${siteName}`
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Artists - TransLyrics',
+        description: 'Find all the Japanese artists featured on TransLyrics, with their songs and translations in multiple languages.',
+    },
+    metadataBase: new URL(`${siteUrl}/artists`)
+};
+
 async function ArtistList() {
     const backendApiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");

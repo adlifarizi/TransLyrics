@@ -9,6 +9,41 @@ import ArtistSongsShimmer from "@/components/artist/artist-songs-shimmer";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_SITE_URL;
+const siteName = process.env.NEXT_SITE_NAME
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+    const { id } = await params;
+
+    const artist = await fetchArtist(id);
+
+    return {
+        title: `${artist.name} - Lyrics & Translations | TransLyrics`,
+        description: `Explore ${artist.name}'s songs and albums, featuring lyrics with translations to English, Romaji, and Indonesian.`,
+        openGraph: {
+            title: `${artist.name} - Lyrics & Translations | TransLyrics`,
+            description: `Find detailed information about ${artist.name}'s songs and albums, including lyrics and translations into English, Romaji, and Indonesian.`,
+            url: `${siteUrl}/artists/${artist.id}/${artist.slug}`,
+            images: artist.image ? `${backendUrl}${artist.image}` : 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+            siteName: `${siteName}`
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${artist.name} - Lyrics & Translations | TransLyrics`,
+            description: `Discover ${artist.name}'s music, featuring lyrics and translations in multiple languages. Explore now!`,
+            images: artist.image ? `${backendUrl}${artist.image}` : 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+        },
+        metadataBase: new URL(`${siteUrl}/artists/${artist.id}/${artist.slug}`)
+    }
+}
+
 const backendApiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
 async function fetchArtist(id: string) {

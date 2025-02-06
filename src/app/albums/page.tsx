@@ -4,6 +4,28 @@ import AlbumSearchCard from "@/components/cards/album-search";
 import AlphabetNavigation from "@/components/search/alphabet-navigation";
 import { Suspense } from "react";
 
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_SITE_URL;
+const siteName = process.env.NEXT_SITE_NAME
+
+export const metadata: Metadata = {
+    title: 'Albums - TransLyrics',
+    description: 'Browse all the albums featured on TransLyrics, with lyrics translations in English, Romaji, and Indonesian.',
+    openGraph: {
+        title: 'Albums - TransLyrics',
+        description: 'Explore all the albums from various artists on TransLyrics, featuring songs with translations to English, Romaji, and Indonesian.',
+        url: `${siteUrl}/albums`,
+        siteName: `${siteName}`
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Albums - TransLyrics',
+        description: 'Discover all the albums on TransLyrics, with lyrics and translations in multiple languages.',
+    },
+    metadataBase: new URL(`${siteUrl}/albums`)
+};
+
 async function AlbumList() {
     const backendApiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
