@@ -8,7 +8,7 @@ export default function SongPlatform({ song }: { song: any }) {
 
     return (
         <section className="relative items-start gap-6 w-full lg:w-3/4 py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-            <h2 className="text-xl lg:text-2xl font-medium text-dark truncate mb-2">
+            <h2 className="text-xl lg:text-2xl font-medium text-dark truncate mb-2 select-none">
                 Listen In
             </h2>
 

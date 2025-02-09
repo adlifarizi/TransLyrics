@@ -52,12 +52,12 @@ export default function FeaturedArtists() {
     return (
         <section className="relative w-full py-2 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
             <div className="flex justify-between items-center mt-2 mb-1">
-                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate">
+                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate select-none">
                     Featured Artists
                 </h2>
                 <a
                     href="/artists"
-                    className="text-sm md:text-base text-blue-500 hover:underline">
+                    className="text-sm md:text-base text-blue-500 hover:underline select-none">
                     See all
                 </a>
             </div>

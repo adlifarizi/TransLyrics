@@ -11,7 +11,7 @@ export default function Hero() {
                                     <img
                                         src="/images/translyrics-logo.png"
                                         alt="TransLyrics"
-                                        className="w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20"
+                                        className="w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20 select-none"
                                     />
                                 </div>
                             </div>

@@ -60,7 +60,7 @@ async function AlbumList() {
 
         return (
             <div className="container py-4 px-4 md:px-6 lg:px-8 xl:px-10">
-                <h1 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2">Album List</h1>
+                <h1 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2 select-none">Album List</h1>
 
                 {/* Client Component untuk navigasi */}
                 <AlphabetNavigation alphabet={alphabet} />
@@ -69,7 +69,7 @@ async function AlbumList() {
                 <div className="space-y-8">
                     {/* Special characters section */}
                     <div id="section-#" className="scroll-mt-24">
-                        <h2 className="text-xl text-dark font-bold mb-1">##</h2>
+                        <h2 className="text-xl text-dark font-bold mb-1 select-none">##</h2>
                         {getAlbumsBySection("#").length > 0 ? (
                             <div className="space-y-2">
                                 {getAlbumsBySection("#").map((album: any) => (
@@ -84,7 +84,7 @@ async function AlbumList() {
                     {/* Alphabet sections */}
                     {alphabet.map((letter) => (
                         <div key={letter} id={`section-${letter}`} className="scroll-mt-24">
-                            <h2 className="text-xl text-dark font-bold mb-1">#{letter}</h2>
+                            <h2 className="text-xl text-dark font-bold mb-1 select-none">#{letter}</h2>
                             {getAlbumsBySection(letter).length > 0 ? (
                                 <div className="space-y-2">
                                     {getAlbumsBySection(letter).map((album: any) => (

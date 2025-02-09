@@ -18,7 +18,7 @@ export default function AlphabetNavigation({ alphabet }: AlphabetNavigationProps
                 <button
                     key={letter}
                     onClick={() => scrollToSection(letter)}
-                    className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-sm md:text-base bg-dark hover:bg-gray-900 text-light rounded"
+                    className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-sm md:text-base bg-dark hover:bg-gray-900 text-light rounded select-none"
                 >
                     {letter}
                 </button>

@@ -56,7 +56,7 @@ export default function NewlyAdded() {
     return (
         <section className="relative w-full py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
 
-            <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2">
+            <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2 select-none">
                 Newly Added
             </h2>
 

@@ -34,7 +34,7 @@ export default function AboutPage() {
                                     <img
                                         src="/images/translyrics-logo.png"
                                         alt="TransLyrics"
-                                        className="w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20"
+                                        className="w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20 select-none"
                                     />
                                 </div>
                             </div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
                     {/* Content Section */}
                     <div className="flex-1 text-left md:text-left">
                         {/* About TransLyrics */}
-                        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 text-dark">
+                        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 text-dark select-none">
                             About TransLyrics
                         </h1>
                         <p className="text-base md:text-lg mb-6 text-dark">
@@ -55,7 +55,7 @@ export default function AboutPage() {
                         </p>
 
                         {/* Why Translyrics */}
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-1 text-dark">
+                        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-1 text-dark select-none">
                             Why TransLyrics?
                         </h2>
 
@@ -94,7 +94,7 @@ export default function AboutPage() {
                         </ul>
 
                         {/* About the Creator */}
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-1 text-dark">
+                        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-1 text-dark select-none">
                             About Creator
                         </h2>
                         <p className="text-base md:text-lg text-dark">

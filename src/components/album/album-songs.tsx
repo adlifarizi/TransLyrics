@@ -27,7 +27,7 @@ export default async function AlbumSongs({ id }: { id: string }) {
 
         return (
             <section className="relative items-start gap-6 w-full py-2 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2">Songs</h2>
+                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2 select-none">Songs</h2>
 
                 {/* Menampilkan daftar lagu atau pesan kosong */}
                 {songs.length > 0 ? (

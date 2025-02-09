@@ -27,7 +27,7 @@ export default async function ArtistAlbums({ id }: { id: string }) {
 
         return (
             <section className="relative items-start gap-6 w-full py-2 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
-                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2">Albums</h2>
+                <h2 className="text-xl lg:text-2xl font-bold text-dark truncate mb-2 select-none">Albums</h2>
 
                 {/* Menampilkan daftar album atau pesan kosong */}
                 {albums.length > 0 ? (

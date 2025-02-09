@@ -84,7 +84,7 @@ export default function SongLyrics({ lyrics }: { lyrics: Lyric[] }) {
     return (
         <section className="relative items-start gap-6 w-full py-4 bg-transparent px-4 md:px-6 lg:px-8 xl:px-10">
 
-            <h2 className="text-xl lg:text-2xl font-medium text-dark truncate mb-2">
+            <h2 className="text-xl lg:text-2xl font-medium text-dark truncate mb-2 select-none">
                 Lyrics
             </h2>
 
@@ -95,7 +95,7 @@ export default function SongLyrics({ lyrics }: { lyrics: Lyric[] }) {
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`px-4 py-2 -mb-px w-full ${activeTab === tab
+                            className={`px-4 py-2 -mb-px w-full select-none ${activeTab === tab
                                 ? 'border-b-4 border-blue-500 text-blue-500'
                                 : 'border-b-2 border-gray-400 text-gray-500 hover:bg-gray-100'
                                 }`}

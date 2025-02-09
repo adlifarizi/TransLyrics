@@ -80,8 +80,6 @@ export default function Footer() {
 
 
         try {
-            showNotificationResult('Sending...');
-
             const body = {
                 name: form.isAnonymous ? 'Anonymous' : form.name,
                 content: form.content
@@ -96,12 +94,15 @@ export default function Footer() {
 
             if (res.status) {
                 showNotificationResult('Comment sent successfully');
+
                 // Reset form
                 setForm({
                     name: '',
                     content: '',
                     isAnonymous: false
                 });
+
+                await new Promise(resolve => setTimeout(resolve, 2000)); // Delay 2s
             }
         } catch {
             showNotificationResult('an unknown error occurred');
@@ -112,9 +113,9 @@ export default function Footer() {
         <footer className="relative w-full bg-dark py-4 px-4 md:px-6 lg:px-8 xl:px-10">
             {/* Notification */}
             {showNotification && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-light text-center px-10 py-6 rounded-lg shadow-lg">
-                        <p className="text-lg font-semibold text-dark">{notificationMessage}</p>
+                <div className="fixed top-4 right-4 z-50 border-b-4 border-blue-500 rounded shadow-lg transition-transform duration-[1s,15s] ease-out translate-x-0 animate-slide-in">
+                    <div className="bg-light text-center px-6 py-2">
+                        <p className="text-lg font-semibold text-dark select-none">{notificationMessage}</p>
                     </div>
                 </div>
             )}
@@ -129,12 +130,12 @@ export default function Footer() {
                                     <img
                                         src="/images/translyrics-logo.png"
                                         alt="TransLyrics"
-                                        className="w-4 md:w-6 lg:w-8 xl:10"
+                                        className="w-4 md:w-6 lg:w-8 xl:10 select-none"
                                     />
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col ml-2">
+                        <div className="flex flex-col ml-2 select-none">
                             <p className="text-lg md:text-xl lg:text-2xl font-maven font-bold text-light">
                                 Trans<span className="text-blue-500">Lyrics</span>
                             </p>
@@ -146,7 +147,7 @@ export default function Footer() {
                 </div>
 
                 {/* Navigation */}
-                <nav className="flex flex-row md:flex-col gap-4 items-center md:items-start justify-center md:justify-start my-6 md:my-0 text-base text-light">
+                <nav className="flex flex-row md:flex-col gap-4 items-center md:items-start justify-center md:justify-start my-6 md:my-0 text-base text-light select-none">
                     {['/', '/artists', '/albums', '/songs', '/about'].map((path) => {
                         const label = path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2);
                         return (
@@ -163,7 +164,7 @@ export default function Footer() {
 
                 {/* Forms */}
                 <div className="flex flex-col gap-2 items-start">
-                    <p className="text-base md:text-lg font-medium text-light">
+                    <p className="text-base md:text-lg font-medium text-light select-none">
                         Comment or request translyrics
                     </p>
 
@@ -199,7 +200,7 @@ export default function Footer() {
                                 />
                                 <label
                                     htmlFor="checkbox-anonymous"
-                                    className="ms-2 text-sm md:text-base font-normal text-light cursor-pointer"
+                                    className="ms-2 text-sm md:text-base font-normal text-light cursor-pointer select-none"
                                 >
                                     send as Anonymous
                                 </label>
@@ -222,7 +223,7 @@ export default function Footer() {
                         <div className="w-full">
                             <button
                                 type="submit"
-                                className="w-full px-4 py-2 bg-blue-500 text-light text-sm md:text-base text-medium rounded hover:bg-blue-600 focus:outline-none"
+                                className="w-full px-4 py-2 bg-blue-500 text-light text-sm md:text-base text-medium rounded hover:bg-blue-600 focus:outline-none select-none"
                             >
                                 Send
                             </button>

@@ -36,7 +36,7 @@ export default function Navbar() {
                         <div className="flex-shrink-0">
                             <a 
                                 href="/" 
-                                className="flex items-center">
+                                className="flex items-center select-none">
                                 <span className="text-lg md:text-2xl lg:text-4xl font-maven font-bold text-dark">Trans</span>
                                 <span className="text-lg md:text-2xl lg:text-4xl font-maven font-bold text-blue-500">Lyrics</span>
                             </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex lg:items-center lg:justify-end lg:flex-1 min-w-0">
                             <div className="flex items-center space-x-1 xl:space-x-4">
-                                <div className="flex space-x-1 xl:space-x-4 mr-4">
+                                <div className="flex space-x-1 xl:space-x-4 mr-4 select-none">
                                     {['/', '/artists', '/albums', '/songs'].map((path) => {
                                         const label = path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2);
                                         return (
